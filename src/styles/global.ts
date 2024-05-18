@@ -6,9 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  body{
   
+  body{
+    background-color: ${props=>props.theme.black};
     color: ${props=>props.theme.white};
   }
+
 `

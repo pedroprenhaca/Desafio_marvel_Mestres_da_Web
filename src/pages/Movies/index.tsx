@@ -1,7 +1,7 @@
-export function Login() {
+export function Movies(){
     return(
         <div>
-            Login
+            Filmes
         </div>
     )
 }
