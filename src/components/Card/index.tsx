@@ -1,19 +1,55 @@
+import { useState } from "react";
 import { CardContainer,TextContent } from "./styles";
+import { Details } from "../Details";
 
-export function Card(){
+export interface ContentProps {
+    apparition?: string;
+    description?: string;
+}
+
+interface MarvelProps {
+    id:string
+    name: string;
+    description: string;
+    img: {
+      path: string;
+      extension: string;
+    },
+        image:string;
+        nameModal:string;
+        content:ContentProps;
+}
+
+
+export function Card({id,name,description,img,image,nameModal,content}:MarvelProps){
+    
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const imgUrl = `${img.path}.${img.extension}`;
+
+   console.log('outro teste', content)
+
     return(
         <CardContainer>
             <div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1559535332-db9971090158?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    <img src={imgUrl} />
                  </div>
                  <TextContent>
-                    <h1>Baby Groot</h1>
-                    <h2>Groot é um indivíduo senciente similar a uma árvore
-                        e frequente cúmplice do criminoso intergalático Rocket Raccoon. Juntos, a dupla se juntou aos Guardiões da Galáxia.</h2>
-                    <p>ver detalhes</p>
+                    <h1>{name}</h1>
+                    <h2>{description}</h2>
+                    <p onClick={handleOpen}>ver detalhes</p>
                  </TextContent>
             </div>
+            <Details 
+            id={id}
+            image={image}
+            nameModal={nameModal}
+            content={content}
+            open={open} 
+            handleClose={handleClose}/>
         </CardContainer>
     )
 }

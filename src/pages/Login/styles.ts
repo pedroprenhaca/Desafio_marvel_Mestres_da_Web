@@ -1,20 +1,32 @@
 import styled from 'styled-components';
 
 import image_of_heroes from '../../assets/capa_heróis.svg'
+import { Link } from 'react-router-dom';
 
- export const LoginScreem = styled.div`
-    
-    background:url(${image_of_heroes});
+export const ComponentContainer = styled.div`
+    display: flex;
+`
+
+export const BackgroundImageContainer = styled.div `
+     background-image: url(${image_of_heroes});
+     display: flex;
+     width: 50%;
+     background-size: cover;
+`
+
+export const LoginContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
     height: 100vh;
-    background-repeat:no-repeat ;
-    background-size:100vh;
-    background-position: right;
-`;
-
+    margin-left: 11rem;
+`
 export const HeaderContainer = styled.div`
-    margin-left:21rem;
+   
 
     img{
+        border: 1px solid ${props=>props.theme.gray};
         width: 23rem;
         height: 7.5625rem;  
         margin-top: 8rem;
@@ -27,14 +39,19 @@ export const HeaderContainer = styled.div`
         color: ${props=>props.theme.red};
         font-size: 2.5rem;
         margin-top: 1rem;
-        margin-left: 2rem;
     }
 `;
 
 export const FormContainer = styled.div`
-margin-left: 21rem;
-p{
-    margin-left: 1.4rem;
+    flex: 1;
+`;
+
+export const LoginAndPassword = styled.div `
+    display:flex;
+    flex-direction:column;
+    gap: 1.2rem;
+
+    p{
     margin-top: 3rem;
     font-family: "Marvel", sans-serif;
     font-weight: 400;
@@ -42,41 +59,87 @@ p{
     color: ${props=>props.theme.gray};
     font-size: 1.25rem;
 }
-
-div{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 input{
    
-    width: 23.9375rem;
-    height: 4.5625rem;
-    padding: 2rem;
-    border-radius: 6rem;
-    background: ${props=>props.theme.white};
-    color: ${props=>props.theme.gray};
-    font-family: "Marvel", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.3rem;
+   width: 23.9375rem;
+   height: 4.5625rem;
+   padding: 2rem;
+   border-radius: 6rem;
+   background: ${props=>props.theme.white};
+   color: ${props=>props.theme.gray};
+   font-family: "Marvel", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 1.3rem;
 }
-
-button{
-    width: 23.9375rem;
-    height: 4.0625rem;
-    border-radius: 2rem;
-    background: ${props=>props.theme.red};
-    color:${props=>props.theme.white};
-    font-family: "Marvel", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.75rem
-}
-`;
+`
 
 export const Forgotpassword = styled.div`
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
     div{
-    }  
-`;
+        input{
+            width: 1rem;
+            height: 1rem;
+        }
+        label{
+            font-family: "Marvel", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.2rem;
+            color: ${props=>props.theme.gray}; 
+        }
+    }
+
+    p{
+        font-family: "Marvel", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.2rem;
+            color: ${props=>props.theme.gray};
+            border-bottom: 1px solid  ${props=>props.theme.red};
+            cursor: pointer;
+    }
+
+`
+
+export const StyledLinkButton = styled(Link)`
+    button{
+    width: 23.9375rem;
+    height: 4.0625rem;
+    margin-top: 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+
+    background: ${props=>props.theme.red};
+    color:${props=>props.theme.white};
+
+    font-family: "Marvel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+    
+
+   
+    }
+`
+;
+
+export const RegisterContainer = styled.div`
+    display: flex;
+    justify-content:center;
+    margin-top: 2rem;
+    gap:0.5rem;
+
+    font-family: "Marvel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    span{
+        color: ${props=>props.theme.red};
+        cursor: pointer;
+    }
+`

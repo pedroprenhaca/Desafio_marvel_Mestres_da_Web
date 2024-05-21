@@ -12,7 +12,7 @@ export function Router(){
             <Route path="/login" element={<Login/>}/>
             
             <Route path="/" element={<DefaultLayout/>}>
-                <Route path="/personagens" element={<Home/>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/filmes" element={<Movies/>}/>
                 <Route path="/hqs" element={<Hqs/>}/>
             </Route>

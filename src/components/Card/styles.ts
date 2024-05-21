@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const CardContainer = styled.div`
 position: relative;
 
@@ -26,24 +27,31 @@ h1{
     font-family: "Marvel", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h2{
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.9rem;
+    width: 18rem;
+    height: 8rem;
+    
 
     font-family: "Marvel", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 p{
     display: flex;
     justify-content:center;
+    align-items: center;
+    
     padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
 
     font-family: "Marvel", sans-serif;
     font-weight: 400;
@@ -51,10 +59,5 @@ p{
     font-size: 1.2rem;
 }
 
-
-
-
-
-
-
 `
+

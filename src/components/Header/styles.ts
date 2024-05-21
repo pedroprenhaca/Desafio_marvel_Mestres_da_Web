@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -35,14 +37,16 @@ export const HeaderContainer = styled.div`
 `;
 
 export const NavbarContainer = styled.nav`
+    
     ul{
         display: flex;
         justify-content: space-between;
         gap: 3rem;
+        list-style-type: none;       
     }
 
     li{
-        list-style-type: none;
+        
         font-family: "Marvel", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -50,3 +54,8 @@ export const NavbarContainer = styled.nav`
     }
 
 `;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: ${props=>props.theme.white};
+`
